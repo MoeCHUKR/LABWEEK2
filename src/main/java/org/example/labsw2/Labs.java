@@ -10,47 +10,71 @@ public class Labs {
         int computerScore = 0;
         String playAgain = "y";
 
-        System.out.print("scissor (0), rock (1), paper (2): ");
+        while (playAgain.equals("y")) {
+
+            System.out.print("Scissor (0), Rock (1), Paper (2), Lizard (3), Spock (4): ");
         int user = input.nextInt();
 
-        int computer = (int)(Math.random() * 3);
+        int computer = (int)(Math.random() * 5);
 
         String computerChoice = "";
         String userChoice = "";
 
-        if (computer == 0) {
-            computerChoice = "scissor";
-        }
-        else if (computer == 1) {
-            computerChoice = "rock";
-        }
-        else {
-            computerChoice = "paper";
-        }
+            if (computer == 0) {
+                computerChoice = "Scissor";
+            }
+            else if (computer == 1) {
+                computerChoice = "Rock";
+            }
+            else if (computer == 2){
+                computerChoice = "Paper";
+            }
+            else if (computer == 3){
+                computerChoice = "Lizard";
+            }
+            else {
+                computerChoice = "Spock";
+            }
 
-        if (user == 0) {
-            userChoice = "scissor";
-        }
-        else if (user == 1) {
-            userChoice = "rock";
-        }
-        else {
-            userChoice = "paper";
-        }
+            if (user == 0) {
+                userChoice = "Scissor";
+            }
+            else if (user == 1) {
+                userChoice = "Rock";
+            }
+            else if (user == 2) {
+                userChoice = "Paper";
+            }
+            else if (user == 3){
+                userChoice = "Lizard";
+            }
+            else {
+                userChoice = "Spock";
+            }
 
-        System.out.print("The computer is " + computerChoice
-                + ". You are " + userChoice);
+            System.out.print("The computer is " + computerChoice
+                    + ". You are " + userChoice);
 
-        if (computer == user) {
-            System.out.println(" too. It is a draw");
-        }
-        else if ((user == 0 && computer == 2)
-                || (user == 1 && computer == 0)
-                || (user == 2 && computer == 1)) {
+            if (computer == user) {
+                System.out.println(" too. It is a draw");
+            }
+            else if ((user == 0 && (computer == 2 || computer == 3))
+                    || (user == 1 && (computer == 0 || computer == 3))
+                    || (user == 2 && (computer == 1 || computer == 4))
+                    || (user == 3 && (computer == 2 || computer == 4))
+                    || (user == 4 && (computer == 0 || computer == 1))
+            ) {
             System.out.println(". You won");
+            userScore++;
         }
         else {
             System.out.println(". You lost");
+            computerScore++;
+        }
+            System.out.println("Score - User: " + userScore + " Computer: " + computerScore);
+
+            System.out.print("Play again? Enter y to continue or n to quit: ");
+            playAgain = input.next();
         }
     }
 }
