@@ -15,23 +15,23 @@ public class Labs {
         String userChoice = "";
 
         if (computer == 0) {
-            computerChoice = "scissor";
+            computerChoice = "Scissor";
         }
         else if (computer == 1) {
-            computerChoice = "rock";
+            computerChoice = "Rock";
         }
         else {
-            computerChoice = "paper";
+            computerChoice = "Paper";
         }
 
         if (user == 0) {
-            userChoice = "scissor";
+            userChoice = "Scissor";
         }
         else if (user == 1) {
-            userChoice = "rock";
+            userChoice = "Rock";
         }
         else {
-            userChoice = "paper";
+            userChoice = "Paper";
         }
 
         System.out.print("The computer is " + computerChoice
