@@ -6,10 +6,10 @@ public class Labs {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("scissor (0), rock (1), paper (2): ");
+        System.out.print("Scissor (0), Rock (1), Paper (2), Lizard (3), Spock (4): ");
         int user = input.nextInt();
 
-        int computer = (int)(Math.random() * 3);
+        int computer = (int)(Math.random() * 5);
 
         String computerChoice = "";
         String userChoice = "";
@@ -20,8 +20,14 @@ public class Labs {
         else if (computer == 1) {
             computerChoice = "Rock";
         }
-        else {
+        else if (computer == 2){
             computerChoice = "Paper";
+        }
+        else if (computer == 3){
+            computerChoice = "Lizard";
+        }
+        else {
+            computerChoice = "Spock";
         }
 
         if (user == 0) {
@@ -30,8 +36,14 @@ public class Labs {
         else if (user == 1) {
             userChoice = "Rock";
         }
-        else {
+        else if (user == 2) {
             userChoice = "Paper";
+        }
+        else if (user == 3){
+            userChoice = "Lizard";
+        }
+        else {
+            userChoice = "Spock";
         }
 
         System.out.print("The computer is " + computerChoice
@@ -40,9 +52,12 @@ public class Labs {
         if (computer == user) {
             System.out.println(" too. It is a draw");
         }
-        else if ((user == 0 && computer == 2)
-                || (user == 1 && computer == 0)
-                || (user == 2 && computer == 1)) {
+        else if ((user == 0 && (computer == 2 || computer == 3))
+                || (user == 1 && (computer == 0 || computer == 3))
+                || (user == 2 && (computer == 1 || computer == 4))
+                || (user == 3 && (computer == 2 || computer == 4))
+                || (user == 4 && (computer == 0 || computer == 1))
+        ) {
             System.out.println(". You won");
         }
         else {
