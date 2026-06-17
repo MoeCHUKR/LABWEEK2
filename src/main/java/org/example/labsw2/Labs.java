@@ -6,6 +6,10 @@ public class Labs {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        int userScore = 0;
+        int computerScore = 0;
+        String playAgain = "y";
+
         System.out.print("scissor (0), rock (1), paper (2): ");
         int user = input.nextInt();
 
